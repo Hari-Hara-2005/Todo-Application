@@ -84,7 +84,7 @@ export default function SignInForm() {
       } catch (error) {
         Swal.fire({
           title: "Error",
-          text: error.message || "Login failed. Please try again.",
+          text:"Email or Password is Invalid.",
           icon: "error",
           confirmButtonText: "OK"
         });

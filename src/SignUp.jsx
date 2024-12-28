@@ -93,7 +93,7 @@ export default function SignupForm() {
         Swal.fire({
           icon: "error",
           title: "Oops...",
-          text: "Something went wrong. Please try again.",
+          text: "Email is Already used.",
         });
         console.error("Error: ", error.message);
       } finally {
