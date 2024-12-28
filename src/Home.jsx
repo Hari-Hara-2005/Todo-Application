@@ -69,12 +69,17 @@ export default function Home() {
     setIsDeleting(id);
 
     setTodos(todos.filter((todo) => todo.todo_id !== id));
-
     try {
-      await axios.delete(`https://todo-pi-plum-45.vercel.app/${id}`);
+      const token = localStorage.getItem("token");
+      await axios.delete(`https://todo-pi-plum-45.vercel.app/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       console.log("Deleted Successfully!");
+      fetchData();
     } catch (error) {
-      console.error(error.message);
+      console.error("Error occurred:", error);
       fetchData();
     } finally {
       setIsDeleting(null);
@@ -96,10 +101,19 @@ export default function Home() {
     );
 
     try {
-      await axios.put(`https://todo-pi-plum-45.vercel.app/${id}`, {
-        desc: todo.todo_desc,
-        status: updatedStatus,
-      });
+      const token = localStorage.getItem("token");
+      await axios.put(
+        `https://todo-pi-plum-45.vercel.app/${id}`,
+        {
+          desc: todo.todo_desc,
+          status: updatedStatus,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       console.log("Status updated successfully!");
     } catch (error) {
       console.error(error.message);
