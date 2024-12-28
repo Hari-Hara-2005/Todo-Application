@@ -1,7 +1,5 @@
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import SignupForm from "./SignIn";
+import App from "./App";
 
-createRoot(document.getElementById("root")).render(
-    <SignupForm/>
-);
+createRoot(document.getElementById("root")).render(<App />);
