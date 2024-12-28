@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-
+import Swal from "sweetalert2";
 const ErrorMessage = ({ message }) => {
   return <p className="text-red-600 text-sm">{message}</p>;
 };
@@ -83,8 +83,18 @@ export default function SignupForm() {
         setAgreed(false);
         navigate("/");
 
-        console.log("Sign Up Successfully");
+        Swal.fire({
+          icon: "success",
+          title: "Success!",
+          text: "Account created successfully",
+          confirmButtonText: "OK",
+        });
       } catch (error) {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong. Please try again.",
+        });
         console.error("Error: ", error.message);
       } finally {
         setIsSubmitting(false);

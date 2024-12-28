@@ -1,4 +1,4 @@
-import { Rocket, Eye, EyeOff, CheckCircle } from "lucide-react";
+import {Eye, EyeOff, CheckCircle } from "lucide-react";
 import { useState, useCallback, useEffect } from "react";
 import { Button } from "@/components/ui/button.tsx";
 import { Card } from "@/components/ui/card";
@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-
+import Swal from "sweetalert2";
 // Reusable Error Message Component
 const ErrorMessage = ({ message }) => {
   return <p className="text-red-600 text-sm">{message}</p>;
@@ -60,11 +60,10 @@ export default function SignInForm() {
   const handleSubmit = useCallback(
     async (e) => {
       e.preventDefault();
-
+  
       if (!validate()) return;
-
       setIsSubmitting(true);
-
+  
       try {
         const response = await axios.post(
           "https://todo-pi-plum-45.vercel.app/login",
@@ -75,15 +74,26 @@ export default function SignInForm() {
         const token = response.data.token;
         localStorage.setItem("token", token);
         setFormData({ email: "", password: "" });
+        Swal.fire({
+          title: "Success!",
+          text: "Logged in successfully.",
+          icon: "success",
+          confirmButtonText: "OK"
+        });
         navigate("/home", { replace: true });
-        console.log("Sign In Successfully");
       } catch (error) {
+        Swal.fire({
+          title: "Error",
+          text: error.message || "Login failed. Please try again.",
+          icon: "error",
+          confirmButtonText: "OK"
+        });
         console.error("Error: ", error.message);
       } finally {
         setIsSubmitting(false);
       }
     },
-    [formData]
+    [formData, navigate]
   );
 
   return (
@@ -159,7 +169,7 @@ export default function SignInForm() {
                     className="flex-1 bg-blue-600 hover:bg-blue-700"
                     disabled={isSubmitting}
                   >
-                    {isSubmitting ? "Signing In..." : "Log In"}
+                    {isSubmitting ? "Log In..." : "Log In"}
                   </Button>
                   <Link to="/signup" className="flex-1">
                     <Button type="button" variant="outline" className="w-full">
