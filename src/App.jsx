@@ -10,9 +10,10 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/home" element={<ProtectedRoute element={<Home />} />} />
         <Route path="/" element={<SignInForm />} />
         <Route path="/signup" element={<SignupForm />} />
+        <Route path="/home" element={<ProtectedRoute element={<Home />} />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   );
