@@ -2,25 +2,18 @@
 
 This is a full-stack project featuring user authentication, a to-do list with individual user data, and product routing. The project is fully hosted with a React frontend (using Shadcn for styling) on Vercel and a Node.js/Express backend with PostgreSQL for data storage.
 
-Table of Contents
+## Table of Contents
 
-Features
+- Features
+- Tech Stack
+- Installation
+- Environment Variables
+- Running the Project
+- API Routes
+- Deployment
+- License
 
-Tech Stack
-
-Installation
-
-Environment Variables
-
-Running the Project
-
-API Routes
-
-Deployment
-
-License
-
-Features
+## Features
 
 Full authentication (Sign In, Sign Up, JWT-based authorization)
 
