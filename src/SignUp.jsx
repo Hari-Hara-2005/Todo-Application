@@ -5,7 +5,7 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Links, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 const ErrorMessage = ({ message }) => {
   return <p className="text-red-600 text-sm">{message}</p>;
@@ -120,9 +120,20 @@ export default function SignupForm() {
                 Join now to manage your tasks better. Plan, prioritize, and
                 achieve more every day.
               </p>
-              <div className="mt-auto flex gap-4 text-xs">
-                <button className="hover:underline">START NOW</button>
-                <button className="hover:underline">LEARN MORE</button>
+              <div className="mt-auto text-xs text-center text-white/70">
+                <p>
+                  Copyright © 2024 | Designed and Developed by{" "}
+                  <a
+                    style={{
+                      textDecoration: "none",
+                      color: "#fff",
+                      fontWeight: 600,
+                    }}
+                    href="https://harihara.vercel.app/"
+                  >
+                    Hari Hara
+                  </a>
+                </p>
               </div>
             </div>
             <div className="absolute right-0 top-0 h-full w-16 translate-x-8 bg-white md:block [clip-path:polygon(100%_0,0%_100%,100%_100%)]"></div>
@@ -186,9 +197,9 @@ export default function SignupForm() {
                   />
                   <label htmlFor="terms" className="text-sm">
                     I accept the{" "}
-                    <a href="#" className="text-blue-600 hover:underline">
+                    <Link to="/terms" className="text-blue-600 hover:underline">
                       Terms & Conditions
-                    </a>
+                    </Link>
                   </label>
                 </div>
                 {errors.terms && <ErrorMessage message={errors.terms} />}

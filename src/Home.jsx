@@ -124,8 +124,8 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-500 to-black p-6 flex items-center justify-center">
-      <div className="w-full max-w-md mx-auto shadow-2xl rounded-xl overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-gray-500 to-black p-6 flex  justify-center flex-col">
+      <div className="w-full max-w-md mx-auto shadow-2xl rounded-xl overflow-hidden mt-auto">
         <div className="bg-white/10 backdrop-blur-lg text-white p-6">
           <motion.h1
             initial={{ scale: 0.5 }}
@@ -239,6 +239,21 @@ export default function Home() {
             )}
           </div>
         </div>
+      </div>
+      <div className="mt-auto text-xs text-center text-white/70">
+        <p>
+          Copyright © 2024 | Designed and Developed by{" "}
+          <a
+            style={{
+              textDecoration: "none",
+              color: "#fff",
+              fontWeight: 700,
+            }}
+            href="https://harihara.vercel.app/"
+          >
+            Hari Hara
+          </a>
+        </p>
       </div>
     </div>
   );

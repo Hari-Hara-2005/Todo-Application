@@ -1,4 +1,4 @@
-import {Eye, EyeOff, CheckCircle } from "lucide-react";
+import { Eye, EyeOff, CheckCircle } from "lucide-react";
 import { useState, useCallback, useEffect } from "react";
 import { Button } from "@/components/ui/button.tsx";
 import { Card } from "@/components/ui/card";
@@ -60,10 +60,10 @@ export default function SignInForm() {
   const handleSubmit = useCallback(
     async (e) => {
       e.preventDefault();
-  
+
       if (!validate()) return;
       setIsSubmitting(true);
-  
+
       try {
         const response = await axios.post(
           "https://todo-pi-plum-45.vercel.app/login",
@@ -78,15 +78,15 @@ export default function SignInForm() {
           title: "Success!",
           text: "Logged in successfully.",
           icon: "success",
-          confirmButtonText: "OK"
+          confirmButtonText: "OK",
         });
         navigate("/home", { replace: true });
       } catch (error) {
         Swal.fire({
           title: "Error",
-          text:"Email or Password is Invalid.",
+          text: "Email or Password is Invalid.",
           icon: "error",
-          confirmButtonText: "OK"
+          confirmButtonText: "OK",
         });
         console.error("Error: ", error.message);
       } finally {
@@ -114,9 +114,20 @@ export default function SignInForm() {
                 Manage your daily tasks efficiently. Plan, prioritize, and track
                 your to-dos effortlessly.
               </p>
-              <div className="mt-auto flex gap-4 text-xs">
-                <button className="hover:underline">GET STARTED</button>
-                <button className="hover:underline">LEARN MORE</button>
+              <div className="mt-auto text-xs text-center text-white/70">
+                <p>
+                  Copyright © 2024 | Designed and Developed by{" "}
+                  <a
+                    style={{
+                      textDecoration: "none",
+                      color: "#fff",
+                      fontWeight: 600,
+                    }}
+                    href="https://harihara.vercel.app/"
+                  >
+                    Hari Hara
+                  </a>
+                </p>
               </div>
             </div>
             <div className="absolute right-0 top-0 h-full w-16 translate-x-8 bg-white md:block [clip-path:polygon(100%_0,0%_100%,100%_100%)]"></div>
