@@ -15,128 +15,119 @@ This is a full-stack project featuring user authentication, a to-do list with in
 
 ## Features
 
-Full authentication (Sign In, Sign Up, JWT-based authorization)
+- Full authentication (Sign In, Sign Up, JWT-based authorization)
+- To-Do list management with CRUD operations
+- Individual user data isolation
+- Protected routes based on user authentication
+- Product router for additional features
+- Fully responsive and styled using Shadcn
+- Frontend and backend hosted and connected seamlessly
 
-To-Do list management with CRUD operations
+## Tech Stack
 
-Individual user data isolation
+### Frontend:
 
-Protected routes based on user authentication
+- React.js
+- Shadcn (CSS)
+- Vercel (Hosting)
 
-Product router for additional features
+### Backend:
 
-Fully responsive and styled using Shadcn
+- Node.js
+- Express.js
+- CORS
+- JWT (Authentication)
+- Vercel (Hosting)
 
-Frontend and backend hosted and connected seamlessly
+### Database:
 
-Tech Stack
+- PostgreSQL (Hosted on Aiven)
 
-Frontend:
+## Installation
 
-React.js
+### Clone the Repository
 
-Shadcn (CSS)
-
-Vercel (Hosting)
-
-Backend:
-
-Node.js
-
-Express.js
-
-CORS
-
-JWT (Authentication)
-
-Vercel (Hosting)
-
-Database:
-
-PostgreSQL (Hosted on Aiven)
-
-Installation
-
-Clone the Repository
-
+```bash
   git clone https://github.com/yourusername/fullstack-todo-auth.git
   cd fullstack-todo-auth
+```
 
-Install Dependencies
+### Install Dependencies
 
-Backend
+#### Backend
 
+```bash
   cd backend
   npm install
+```
 
-Frontend
+#### Frontend
 
+```bash
   cd frontend
   npm install
+```
 
-Environment Variables
+## Environment Variables
 
 Create a .env file in the root of the backend folder and add the following:
 
-PORT=5000
-DATABASE_URL=your_postgresql_database_url
-JWT_SECRET=your_jwt_secret_key
+```bash
+  PORT=5000
+  DATABASE_URL=your_postgresql_database_url
+  JWT_SECRET=your_jwt_secret_key
+```
 
-Running the Project
+## Running the Project
 
-Start Backend
+### Start Backend
 
+```bash
   cd backend
   npm run dev
+```
 
-Start Frontend
+### Start Frontend
 
+```bash
   cd frontend
   npm start
+```
 
 The frontend should be available at http://localhost:3000 and the backend at http://localhost:5000.
 
-API Routes
+## API Routes
 
-Authentication
+### Authentication
 
-POST /api/auth/signup - Register new user
+- POST /api/auth/signup - Register new user
+- POST /api/auth/signin - Login user and receive JWT
 
-POST /api/auth/signin - Login user and receive JWT
+### To-Do
 
-To-Do
+- GET /api/todo - Get user-specific to-do items
+- POST /api/todo - Add new to-do item
+- PUT /api/todo/:id - Update to-do item
+- DELETE /api/todo/:id - Delete to-do item
 
-GET /api/todo - Get user-specific to-do items
+### Products (Sample Route)
 
-POST /api/todo - Add new to-do item
+- GET /api/products - Fetch products (protected route)
+- API URL
+- Base API URL: https://todo-pi-plum-45.vercel.app
 
-PUT /api/todo/:id - Update to-do item
+## Deployment
 
-DELETE /api/todo/:id - Delete to-do item
+### Frontend
 
-Products (Sample Route)
+- Deployed using Vercel
+- Automatic builds from GitHub push
 
-GET /api/products - Fetch products (protected route)
+### Backend
 
-API URL
+- Deployed on Vercel at https://todo-pi-plum-45.vercel.app
+- PostgreSQL hosted on Aiven
 
-Base API URL: https://todo-pi-plum-45.vercel.app
+## License
 
-Deployment
-
-Frontend
-
-Deployed using Vercel
-
-Automatic builds from GitHub push
-
-Backend
-
-Deployed on Vercel at https://todo-pi-plum-45.vercel.app
-
-PostgreSQL hosted on Aiven
-
-License
-
-This project is open-source and available under the MIT License.
-
+- This project is open-source and available under the MIT License.
