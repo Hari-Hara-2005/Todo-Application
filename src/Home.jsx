@@ -14,11 +14,14 @@ export default function Home() {
   const fetchData = async () => {
     const token = localStorage.getItem("token");
     try {
-      const response = await axios.get("https://todo-pi-plum-45.vercel.app/", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const response = await axios.get(
+        "https://todo-git-main-hari-haras-projects.vercel.app/",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       setTodos(response.data);
     } catch (error) {
       console.error(error.message);
@@ -37,7 +40,7 @@ export default function Home() {
     const token = localStorage.getItem("token");
     try {
       const response = await axios.post(
-        "https://todo-pi-plum-45.vercel.app/",
+        "https://todo-git-main-hari-haras-projects.vercel.app/",
         {
           desc: newTodo,
         },
@@ -71,11 +74,14 @@ export default function Home() {
     setTodos(todos.filter((todo) => todo.todo_id !== id));
     try {
       const token = localStorage.getItem("token");
-      await axios.delete(`https://todo-pi-plum-45.vercel.app/${id}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      await axios.delete(
+        `https://todo-git-main-hari-haras-projects.vercel.app/${id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       console.log("Deleted Successfully!");
       fetchData();
     } catch (error) {
@@ -103,7 +109,7 @@ export default function Home() {
     try {
       const token = localStorage.getItem("token");
       await axios.put(
-        `https://todo-pi-plum-45.vercel.app/${id}`,
+        `https://todo-git-main-hari-haras-projects.vercel.app/${id}`,
         {
           desc: todo.todo_desc,
           status: updatedStatus,

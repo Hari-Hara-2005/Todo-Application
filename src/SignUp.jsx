@@ -73,11 +73,7 @@ export default function SignupForm() {
       setIsSubmitting(true);
 
       try {
-        await axios.post(
-          "https://todo-pi-plum-45.vercel.app/register",
-          formData,
-          { headers: { "Content-Type": "application/json" } }
-        );
+        await axios.post("https://todo-git-main-hari-haras-projects.vercel.app/register", formData);
 
         setFormData({ name: "", email: "", password: "" });
         setAgreed(false);
