@@ -125,9 +125,9 @@ export default function SignupForm() {
                       color: "#fff",
                       fontWeight: 600,
                     }}
-                    href="https://harihara.vercel.app/"
+                    {/* href="https://harihara.vercel.app/" */}
                   >
-                    Hari Hara
+                    Manoj Kumar
                   </a>
                 </p>
               </div>
