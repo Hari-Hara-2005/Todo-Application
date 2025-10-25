@@ -255,7 +255,7 @@ export default function Home() {
               color: "#fff",
               fontWeight: 700,
             }}
-            {/* href="https://harihara.vercel.app/" */}
+            /* href="https://harihara.vercel.app/" */
           >
             Manoj Kumar
           </a>
