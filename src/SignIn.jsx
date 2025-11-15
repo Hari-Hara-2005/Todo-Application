@@ -113,16 +113,16 @@ export default function SignInForm() {
               </p>
               <div className="mt-auto text-xs text-center text-white/70">
                 <p>
-                  Copyright © 2024 | Designed and Developed by{" "}
+                  Copyright © 2025 | Designed and Developed by{" "}
                   <a
                     style={{
                       textDecoration: "none",
                       color: "#fff",
                       fontWeight: 600,
                     }}
-                    /* href="https://harihara.vercel.app/" */
+                    href="https://harihara.vercel.app/"
                   >
-                    Manoj Kumar
+                    Hari Hara
                   </a>
                 </p>
               </div>
